@@ -1,0 +1,353 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+#root, body, html {
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.rs-theme-light {
+  --border-color: rgba(83, 83, 83, 0.202);
+  --span-small: #717171 !important;
+  --sub-bg: #f2f2f5;
+}
+
+.rs-theme-dark {
+  --rs-body: #1E1E1E !important;
+  --rs-navbar-default-bg: #141414 !important;
+  --border-color: rgba(139, 139, 139, 0.202);
+  --span-small: #a2a2a2 !important;
+  --sub-bg: #363636;
+  --sub-bg-dim: #1f1f1f;
+}
+
+.rs-container.dark * {
+    scrollbar-width: thin;
+    scrollbar-color: #f9f5f5 #1E1E1E;
+    
+}
+
+/* Chrome, Edge and Safari */
+.rs-container.dark *::-webkit-scrollbar {
+  height: 10px;
+  width: 1rem;
+}
+.rs-container.dark *::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #1E1E1E;
+}
+
+.rs-container.dark *::-webkit-scrollbar-track:hover {
+  background-color: #1E1E1E;
+}
+
+.rs-container.dark *::-webkit-scrollbar-track:active {
+  background-color: #1E1E1E;
+}
+
+.rs-container.dark *::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: #8b8b8b8a;
+}
+
+.rs-container.dark *::-webkit-scrollbar-thumb:hover {
+  background-color: #a4a4a4b5;
+}
+
+.rs-container.dark*::-webkit-scrollbar-thumb:active {
+  background-color: #aeaeaec6;
+}
+
+::-webkit-scrollbar-corner { background: rgba(0,0,0,0.0); }
+
+
+.fileView {
+  width: max-content;
+  min-width: 100%;
+  color: black;;
+}
+
+.fileView.dark {
+  background-color: #1e1e1e;
+  color: #d4d4d4 !important;
+}
+
+.fileView.dark .lineIdx {
+  background-color: #1e1e1e;
+  color: #858585;
+}
+
+.rs-panel-body {
+  height: 100%;
+}
+
+.rs-panel {
+  border-radius: 0 !important;
+}
+
+.lineIdx {
+  width: 2rem;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem 0 2rem;
+  background-color: #d6d6d6;
+}
+
+.lineValue {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  white-space:pre-wrap;
+  font-family: Consolas, 'Courier New', monospace;
+  width: 100%;
+  color: inherit;
+}
+
+.removed .lineIdx {
+  background-color: rgb(152, 62, 62) !important;
+}
+
+.removed .lineValue {
+  background-color: rgb(190, 90, 90) !important;
+}
+
+.added .lineIdx {
+  background-color: rgb(103, 140, 81) !important;
+}
+
+.added .lineValue {
+  background-color: rgb(156, 184, 149) !important;
+}
+
+
+.fileView.dark .removed .lineIdx {
+  background-color: rgb(124, 46, 46) !important;
+}
+
+.fileView.dark .removed .lineValue {
+  background-color: rgb(65, 24, 24) !important;
+}
+
+.fileView.dark .added .lineIdx {
+  background-color: rgb(48, 65, 38) !important;
+}
+
+.fileView.dark .added .lineValue {
+  background-color: rgb(67, 115, 55) !important;
+}
+
+.fileEditLine {
+  height: 1rem;
+  border: none !important;
+  outline: none !important;
+}
+
+.fileViewEditable {
+  height: 100%;
+  width: 100%;
+}
+
+.fileViewEditableEditor {
+  min-width: 100%;
+  width: fit-content;
+  height: 100%;
+  white-space: pre-wrap;
+  font-family: Consolas, 'Courier New', monospace;
+  outline: none;
+  border: none;
+}
+
+.filesView {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.directoryList {
+  overflow:auto;
+  overflow-y:auto;
+  overflow-x:auto;
+  height: 100%;
+  position: relative;
+  padding-top: 0.5rem;
+}
+
+.listed {
+  height: 1.3rem;
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  padding-left: 2rem;
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.rs-container:not(.dark) .listed:hover {
+  background-color: #c7c7c782;
+}
+
+.listed:hover {
+  background-color: #8d888885;
+}
+
+.listed .rs-icon {
+  margin-right: 0.5rem;
+}
+
+.rs-breadcrumb {
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 1rem !important;
+}
+
+.pathToolbar {
+  display: flex;
+  height: 35%;
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+  align-items: center;
+  font-family: Consolas, 'Courier New', monospace;
+  padding-left: 1rem;
+}
+
+.toolBarBar {
+  height: 65%;
+  width: 100%;
+}
+
+.toolBar {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  color: black;
+  -webkit-box-shadow: 1px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 1px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 1px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  z-index: 99999;
+}
+
+.pathBack {
+  cursor: pointer;
+}
+
+.pathBack:hover {
+  color: rgb(106, 106, 199);
+}
+
+.rs-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rs-breadcrumb-item:hover {
+  color: rgb(121, 121, 194)
+}
+ 
+.navWrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.rs-navbar-item, .rs-navbar-brand {
+  padding: 0.1rem 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 2rem !important;
+  border-radius: 3px !important;
+  margin: 0.1rem 0 !important;
+}
+
+.rs-navbar-nav {
+  height: 100% !important;
+}
+
+.rs-navbar-brand {
+  padding: 0.1rem 0.8rem !important;
+}
+
+.rs-container.dark .noFiles {
+  background-color: var(--sub-bg);
+}
+
+.noFiles {
+  position: absolute;
+  width: fit-content;
+  width: 35rem;
+  height: 10rem;
+  left: calc(35vw - 17.5rem);
+  top: calc(50vh - 7.5rem);
+  border-radius: 1rem;
+  background-color: var(--sub-bg);
+  padding: 1rem;
+  border: 2px dashed #e5e5ea;
+  transition: 0.1s ease-in-out;
+}
+
+.noFilesWrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.noFiles input {
+  width: 70%;
+  background-color: var(--sub-bg-dim);
+}
+
+.initHalfWidth {
+  width: 50%;
+}
+
+.borderedLeft {
+  border-left: 2px solid var(--border-color) !important;
+}
+
+.diffStyleBtns {
+  height: 100%;
+  width: 10rem;
+  display: flex !important;
+  align-items: center;
+}
+
+.diffStyleBtns .rs-btn {
+  padding: 0.1rem 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 2rem !important;
+  margin: 0.1rem 0 !important;
+}
+
+.sm-span {
+  color: var(--span-small);
+  font-size: 0.8rem;
+  font-family: Consolas, 'Courier New', monospace;
+}
+
+.rs-header {
+  height: 5rem !important;
+}
